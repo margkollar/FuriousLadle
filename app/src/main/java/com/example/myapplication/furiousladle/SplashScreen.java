@@ -12,7 +12,12 @@ import android.os.Handler;
 
 
 public class SplashScreen extends AppCompatActivity {
-
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_splash_screen);
+        Intent mySuperIntent = new Intent(SplashScreen.this, MainActivity.class);
+        startActivity(mySuperIntent);
+    }
 
 
 //    private static final boolean AUTO_HIDE = true;
