@@ -20,7 +20,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:backgroundTint="#233142"
-                android:src="@drawable/logo" />
+                android:src="@drawable/logo"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="0dp" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
