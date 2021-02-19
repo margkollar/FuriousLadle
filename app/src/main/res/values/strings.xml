@@ -4,4 +4,9 @@
     <string name="dummy_button">Dummy Button</string>
     <string name="dummy_content">DUMMY\nCONTENT</string>
     <string name="slogan">might to bite</string>
+    <string name="label_plzlogin">Please Login</string>
+    <string name="label_login">Login</string>
+    <string name="hint_username">Username</string>
+    <string name="hint_password">Password</string>
+    <string name="label_cancel">Cancel</string>
 </resources>
