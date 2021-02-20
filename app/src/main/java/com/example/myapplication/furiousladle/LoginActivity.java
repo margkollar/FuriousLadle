@@ -28,15 +28,15 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EditText userNameEdit = findViewById(R.id.edit_usr);
-                EditText passwdEdit = findViewById(R.id.edit_pass);
+                EditText userNameEdit = findViewById(R.id.username_input);
+                EditText passwdEdit = findViewById(R.id.password_input);
                 String userStr = userNameEdit.getText().toString();
                 String passwdStr = passwdEdit.getText().toString();
 
                 if(userStr.matches("") || passwdStr.matches("")){
                     Toast.makeText(LoginActivity.this, "username or password empty", Toast.LENGTH_SHORT).show();
                 }else {
-//                   TODO: Go to a new activity code
+                 // TODO: Go to a new activity code
                 }
             }
         });
