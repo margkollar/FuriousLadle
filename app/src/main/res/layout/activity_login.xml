@@ -30,6 +30,9 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:backgroundTint="@color/appbar"
+        android:textColorHint="@color/buttons"
+        app:boxStrokeColor="@color/buttons"
+        app:hintTextColor="@color/white"
         android:hint="@string/hint_username"
         app:layout_constraintBottom_toTopOf="@id/edit_pass"
         app:layout_constraintTop_toBottomOf="@id/txt_slogan">
@@ -52,6 +55,9 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:backgroundTint="@color/appbar"
+        android:textColorHint="@color/buttons"
+        app:boxStrokeColor="@color/buttons"
+        app:hintTextColor="@color/white"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/edit_usr"
         app:passwordToggleEnabled="true">
