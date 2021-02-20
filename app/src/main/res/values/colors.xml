@@ -17,4 +17,5 @@
     <color name="buttons">#F9AA33</color>
     <color name="appbar">#4A6572</color>
     <color name="text">#FF000000</color>
+    <color name="error">#C80E0E</color>
 </resources>

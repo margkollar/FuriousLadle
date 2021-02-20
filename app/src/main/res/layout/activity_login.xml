@@ -7,74 +7,69 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@color/appbar"
-    >
+    android:theme="@style/Theme.MaterialComponents.NoActionBar">
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/txt_slogan"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:paddingTop="@dimen/dp16"
+        android:backgroundTint="@color/appbar"
         android:gravity="center"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        android:textSize="@dimen/sp28"
+        android:paddingTop="@dimen/dp16"
         android:paddingBottom="@dimen/dp32"
         android:text="@string/label_plzlogin"
         android:textColor="@color/buttons"
-        />
+        android:textSize="@dimen/sp28"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/edit_usr"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:backgroundTint="@color/appbar"
         android:hint="@string/hint_username"
-        app:layout_constraintTop_toBottomOf="@id/txt_slogan"
         app:layout_constraintBottom_toTopOf="@id/edit_pass"
-        >
+        app:layout_constraintTop_toBottomOf="@id/txt_slogan">
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/username_input"
             android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_marginLeft="@dimen/dp32"
             android:layout_marginRight="@dimen/dp32"
-            android:layout_height="match_parent"
-            />
+            android:backgroundTint="@color/appbar"
+            android:textColorHint="@color/buttons"
+            android:textColor="@color/white" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
 
-
-
-
     <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/edit_pass"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-
-        app:passwordToggleEnabled = "true"
-        app:layout_constraintTop_toBottomOf="@id/edit_usr"
-        android:id="@+id/edit_pass"
+        android:backgroundTint="@color/appbar"
         app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edit_usr"
+        app:passwordToggleEnabled="true">
 
-       >
-
-       <com.google.android.material.textfield.TextInputEditText
-           android:id="@+id/password_input"
-           android:hint="@string/hint_password"
-        android:inputType="textPassword"
-        android:layout_width = "match_parent"
-        android:layout_height = "match_parent"
-
-        android:paddingTop="@dimen/dp32"
-        android:layout_marginLeft="@dimen/dp32"
-        android:layout_marginRight="@dimen/dp32"
-        android:textColor="@color/text"
-        android:textStyle="normal"
-        android:lineSpacingExtra="7sp"
-
-        />
-       </com.google.android.material.textfield.TextInputLayout>
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/password_input"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="@dimen/dp32"
+            android:layout_marginRight="@dimen/dp32"
+            android:backgroundTint="@color/appbar"
+            android:hint="@string/hint_password"
+            android:inputType="textPassword"
+            android:lineSpacingExtra="7sp"
+            android:paddingTop="@dimen/dp32"
+            android:textColor="@color/text"
+            android:textStyle="normal" />
+    </com.google.android.material.textfield.TextInputLayout>
 
 
     <com.google.android.material.button.MaterialButton
@@ -89,8 +84,6 @@
         android:textColor="@color/text"
         app:layout_constraintLeft_toLeftOf="@id/edit_pass"
         app:layout_constraintRight_toLeftOf="@id/btn_cancel"
-
-
         app:layout_constraintTop_toBottomOf="@id/edit_pass" />
 
     <com.google.android.material.button.MaterialButton
@@ -105,11 +98,6 @@
         android:layout_marginLeft="@dimen/dp32"
         android:layout_marginRight="@dimen/dp32"
         android:text="@string/label_cancel"
-        android:textColor="@color/text"
-
-        />
-
-
-
+        android:textColor="@color/text"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
