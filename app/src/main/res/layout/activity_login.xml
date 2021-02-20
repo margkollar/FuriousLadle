@@ -81,21 +81,23 @@
         android:id="@+id/btn_login"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/edit_pass"
+        android:layout_marginLeft="@dimen/dp32"
+        android:layout_marginTop="@dimen/dp32"
+        android:layout_marginRight="@dimen/dp32"
+        android:backgroundTint="@color/buttons"
+        android:text="@string/label_login"
+        android:textColor="@color/text"
         app:layout_constraintLeft_toLeftOf="@id/edit_pass"
         app:layout_constraintRight_toLeftOf="@id/btn_cancel"
-        android:layout_marginRight="@dimen/dp32"
-        android:layout_marginTop="@dimen/dp32"
-        android:layout_marginLeft="@dimen/dp32"
-        android:text="@string/label_login"
-        android:background="@color/buttons"
 
-        />
+
+        app:layout_constraintTop_toBottomOf="@id/edit_pass" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_cancel"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/buttons"
         app:layout_constraintTop_toBottomOf="@id/edit_pass"
         app:layout_constraintLeft_toRightOf="@id/btn_login"
         app:layout_constraintRight_toRightOf="@id/edit_pass"
@@ -103,7 +105,8 @@
         android:layout_marginLeft="@dimen/dp32"
         android:layout_marginRight="@dimen/dp32"
         android:text="@string/label_cancel"
-        android:background="@color/buttons"
+        android:textColor="@color/text"
+
         />
 
 
