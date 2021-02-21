@@ -47,7 +47,7 @@ public class RecipeViewModel extends AndroidViewModel {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        callback.onErrorResponse("Could not perform the reaquest");
+                        callback.onErrorResponse("Could not perform the request");
                     }
                 });
 
