@@ -9,10 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FuriousLadle">
-        <activity android:name=".recycler.RecyclerActivity"></activity>
-        <activity android:name=".LoginActivity"
-            android:theme="@style/NoActionBar"></activity>
-        <activity android:name=".Splash"
+        <activity
+            android:name=".Search"
+            android:theme="@style/NoActionBar"/>
+        <activity android:name=".recycler.RecyclerActivity" />
+        <activity
+            android:name=".LoginActivity"
+            android:theme="@style/NoActionBar" />
+        <activity
+            android:name=".Splash"
             android:theme="@style/NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
