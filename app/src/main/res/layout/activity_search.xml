@@ -16,7 +16,7 @@
         android:layout_marginStart="80dp"
         android:layout_marginTop="228dp"
         android:fontFamily="cursive"
-        android:text="Time to eat"
+        android:text="Time to cook"
         android:textColor="@color/buttons"
         android:textSize="@dimen/dp64"
         android:backgroundTint="@color/appbar"
