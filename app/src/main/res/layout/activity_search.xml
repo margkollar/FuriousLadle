@@ -42,6 +42,7 @@
             android:backgroundTint="@color/appbar"
             android:textColorHint="@color/buttons"
             android:textColor="@color/white"
+            android:textCursorDrawable="@color/buttons"
             android:imeOptions="actionSearch"
             android:inputType="text"
             android:maxLines="1"/>
