@@ -1,5 +1,6 @@
 package com.example.myapplication.furiousladle;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.annotation.Nullable;
@@ -10,6 +11,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.example.myapplication.furiousladle.recycler.RecyclerActivity;
 import com.google.android.material.button.MaterialButton;
 
 
@@ -36,7 +38,9 @@ public class LoginActivity extends AppCompatActivity {
                 if(userStr.matches("") || passwdStr.matches("")){
                     Toast.makeText(LoginActivity.this, "username or password empty", Toast.LENGTH_SHORT).show();
                 }else {
-                 // TODO: Go to a new activity code
+                 // intent gia na paei sto recycler view
+                    Intent intent = new Intent(LoginActivity.this, RecyclerActivity.class);
+                    startActivity(intent);
                 }
             }
         });
