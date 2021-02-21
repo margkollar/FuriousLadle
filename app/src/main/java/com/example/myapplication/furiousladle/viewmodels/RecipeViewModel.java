@@ -5,8 +5,13 @@ import android.app.Application;
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 
+import com.android.volley.Request;
 import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+
 
 public class RecipeViewModel extends AndroidViewModel {
     private final String appID = "eb3439ca";
@@ -28,7 +33,30 @@ public class RecipeViewModel extends AndroidViewModel {
 
     }
 
-    void retrieveRecipe(RecipeListener callback) {
+    void retrieveRecipe(RecipeListener callback, String parameter) {
+        // Request a string response from the provided URL.
+        // TODO: check null parameter
+        String url = prepareRequest(parameter);
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, url,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        callback.onSuccessResponse(response);
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        callback.onErrorResponse("Could not perform the reaquest");
+                    }
+                });
 
+        // Add the request to the RequestQueue.
+        queue.add(stringRequest);
+    }
+
+    @Override
+    protected void onCleared() {
+        super.onCleared();
     }
 }
