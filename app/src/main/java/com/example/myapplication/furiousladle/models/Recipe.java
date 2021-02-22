@@ -5,21 +5,20 @@ import java.util.Objects;
 
 public class Recipe {
     private String title;
-    private String description;
+    private String owner;
     private ArrayList<String> ingredients;
-    private String tags;
-    private String contentURL;
+    private String internalURL;
+    private String externalURL;
     private String imageURL;
 
     public Recipe(){}
 
-    public Recipe(String title, String description, ArrayList<String> ingredients, String tags,
-                  String contentURL, String imageURL) {
+    public Recipe(String title, String owner, ArrayList<String> ingredients, String internalURL, String externalURL, String imageURL) {
         this.title = title;
-        this.description = description;
+        this.owner = owner;
         this.ingredients = ingredients;
-        this.tags = tags;
-        this.contentURL = contentURL;
+        this.internalURL = internalURL;
+        this.externalURL = externalURL;
         this.imageURL = imageURL;
     }
 
@@ -31,12 +30,12 @@ public class Recipe {
         this.title = title;
     }
 
-    public String getDescription() {
-        return description;
+    public String getOwner() {
+        return owner;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setOwner(String owner) {
+        this.owner = owner;
     }
 
     public ArrayList<String> getIngredients() {
@@ -47,20 +46,20 @@ public class Recipe {
         this.ingredients = ingredients;
     }
 
-    public String getTags() {
-        return tags;
+    public String getInternalURL() {
+        return internalURL;
     }
 
-    public void setTags(String tags) {
-        this.tags = tags;
+    public void setInternalURL(String internalURL) {
+        this.internalURL = internalURL;
     }
 
-    public String getContentURL() {
-        return contentURL;
+    public String getExternalURL() {
+        return externalURL;
     }
 
-    public void setContentURL(String contentURL) {
-        this.contentURL = contentURL;
+    public void setExternalURL(String externalURL) {
+        this.externalURL = externalURL;
     }
 
     public String getImageURL() {
@@ -77,22 +76,27 @@ public class Recipe {
         if (o == null || getClass() != o.getClass()) return false;
         Recipe recipe = (Recipe) o;
         return title.equals(recipe.title) &&
-                description.equals(recipe.description) &&
+                owner.equals(recipe.owner) &&
                 ingredients.equals(recipe.ingredients) &&
-                Objects.equals(imageURL, recipe.imageURL);
+                internalURL.equals(recipe.internalURL) &&
+                externalURL.equals(recipe.externalURL) &&
+                imageURL.equals(recipe.imageURL);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(title, description, ingredients, imageURL);
+        return Objects.hash(title, owner, ingredients, internalURL, externalURL, imageURL);
     }
 
     @Override
     public String toString() {
-        return "title='" + title + '\'' +
-                ", description='" + description + '\'' +
-                ", ingredients=" + ingredients;
+        return "Recipe{" +
+                "title='" + title + '\'' +
+                ", owner='" + owner + '\'' +
+                ", ingredients=" + ingredients +
+                ", internalURL='" + internalURL + '\'' +
+                ", externalURL='" + externalURL + '\'' +
+                ", imageURL='" + imageURL + '\'' +
+                '}';
     }
-
-
 }
