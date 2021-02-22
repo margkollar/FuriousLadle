@@ -45,7 +45,8 @@
             android:layout_marginRight="@dimen/dp32"
             android:backgroundTint="@color/appbar"
             android:textColorHint="@color/buttons"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            android:textCursorDrawable="@color/buttons"/>
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -74,6 +75,7 @@
             android:lineSpacingExtra="7sp"
             android:paddingTop="@dimen/dp32"
             android:textColor="@color/text"
+            android:textCursorDrawable="@color/buttons"
             android:textStyle="normal" />
     </com.google.android.material.textfield.TextInputLayout>
 

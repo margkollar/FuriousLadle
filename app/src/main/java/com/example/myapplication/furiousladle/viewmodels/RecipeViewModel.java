@@ -32,7 +32,7 @@ public class RecipeViewModel extends AndroidViewModel {
                 baseAPIPath, appID, appKey, parameter);
 
     }
-
+    
     void retrieveRecipe(RecipeListener callback, String parameter) {
         // Request a string response from the provided URL.
         // TODO: check null parameter

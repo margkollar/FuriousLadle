@@ -38,8 +38,8 @@ public class LoginActivity extends AppCompatActivity {
                 if(userStr.matches("") || passwdStr.matches("")){
                     Toast.makeText(LoginActivity.this, "username or password empty", Toast.LENGTH_SHORT).show();
                 }else {
-                 // intent gia na paei sto recycler view
-                    Intent intent = new Intent(LoginActivity.this, RecyclerActivity.class);
+                 // intent gia na paei sto search page
+                    Intent intent = new Intent(LoginActivity.this, Search.class);
                     startActivity(intent);
                 }
             }
