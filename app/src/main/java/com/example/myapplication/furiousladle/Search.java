@@ -66,10 +66,14 @@ public class Search extends AppCompatActivity {
                 case EditorInfo.IME_ACTION_SEARCH:
                     EditText userSrh = findViewById(R.id.search);
 
-                    String userStr = userSrh.getText().toString();
+                    String userStr = String.valueOf(userSrh.getText());
 
                     Toast.makeText(Search.this, "Searching", Toast.LENGTH_SHORT).show();
+
                     Intent intent = new Intent(Search.this, RecyclerActivity.class);
+                    Bundle parameter = new Bundle();
+                    parameter.putString("searchterm", userStr);
+                    intent.putExtras(parameter);
                     startActivity(intent);
                     break;
             }
@@ -80,24 +84,5 @@ public class Search extends AppCompatActivity {
     @Override
     public void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
-//      TODO: test viewmodel
-        RecipeViewModel recipeViewModel = new ViewModelProvider(this).get(RecipeViewModel.class);
-        EditText searchbox = findViewById(R.id.search);
-        String searchTerm = searchbox.getText().toString();
-        recipeViewModel.prepareRequest(searchTerm);
-        recipeViewModel.retrieveRecipe(new RecipeListener() {
-            @Override
-            public void onSuccessResponse(List<Recipe> data) {
-                RecyclerView recyclerView=findViewById(R.id.recycler);
-                RecyclerAdapter adapter= new RecyclerAdapter(data);
-                recyclerView.setAdapter(adapter);
-
-            }
-
-            @Override
-            public void onErrorResponse(String data) {
-
-            }
-        }, searchTerm);
     }
 }

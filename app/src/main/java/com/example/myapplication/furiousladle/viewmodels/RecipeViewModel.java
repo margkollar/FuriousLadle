@@ -1,6 +1,8 @@
 package com.example.myapplication.furiousladle.viewmodels;
 
 import android.app.Application;
+import android.util.Log;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
@@ -11,6 +13,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.myapplication.furiousladle.Search;
 import com.example.myapplication.furiousladle.jsonhelpers.JsonResponse;
 import com.example.myapplication.furiousladle.jsonhelpers.JsonResponseHit;
 import com.example.myapplication.furiousladle.jsonhelpers.JsonResponseRecipe;
@@ -49,16 +52,30 @@ public class RecipeViewModel extends AndroidViewModel {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        JsonResponse jResp = new Gson().fromJson(response, JsonResponse.class);
-                        List<Recipe> recipes = new ArrayList<>();
+                        List<Recipe> recipesModel = new ArrayList<>();
                         List<JsonResponseRecipe> jrecipes = new ArrayList<>();
-                        List<JsonResponseHit> hits = new ArrayList<>();
-                        hits = jResp.getHits();
+                        List<JsonResponseRecipe> hits = new ArrayList<>();
 
+                        JsonResponse jResp = new Gson().fromJson(response, JsonResponse.class);
+//                       Jrecipes list
+                        hits = jResp.getHit();
+
+//                        for(JsonResponseHit jhit : hits){
+//                            for(JsonResponseRecipe jre. : jhit){
                         for(int i=0;i<10;i++){
-                       recipes.add(new Recipe( hits.get(i).getRecipe().get(0).getLabel(),"hgkhjhgjhj", (ArrayList<String>) hits.get(0).getRecipe().get(0).getIngredientLines(),"abc","nnn","baa"));
+                            Recipe theRecipe = new Recipe();
+                            theRecipe.setTitle(hits.get(i).getLabel());
+                            theRecipe.setOwner(hits.get(i).getSource());
+                            theRecipe.setImageURL(hits.get(i).getImage());
+                            theRecipe.setExternalURL(hits.get(i).getUrl());
+                            theRecipe.setInternalURL(hits.get(i).getUri());
+                            theRecipe.setIngredients((ArrayList<String>)hits.get(i).getIngredientLines());
+
+                            recipesModel.add(theRecipe);
+                            Log.d("JSON", theRecipe.toString());
+                            Toast.makeText(getApplication(),"Response",Toast.LENGTH_LONG).show();
                         };
-                        callback.onSuccessResponse(recipes);
+                        callback.onSuccessResponse(recipesModel);
                     }
                 },
                 new Response.ErrorListener() {
