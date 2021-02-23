@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.furiousladle.R;
-import com.example.myapplication.furiousladle.RecipeModel;
+import com.example.myapplication.furiousladle.models.Recipe;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,27 +32,15 @@ public class RecyclerActivity extends AppCompatActivity {
 
     }
 
-    private List<RecipeModel> getData(){
-        List<RecipeModel> array=new ArrayList<RecipeModel>();
+    private List<Recipe> getData(){
+        List<Recipe> array=new ArrayList<Recipe>();
         //tra la la gemizoyme kapwsssssss ti lista
         //oxi karfwta omws.............................
 
         //proxeira na doume an douleyei :
-        array.add(new RecipeModel("mousakas","melitzanes kai mpesamel","url1"));
-        array.add(new RecipeModel("pastitso","makaronia kai mpesamel","url2"));
-        array.add(new RecipeModel("makaronada","makaronia kai kimas","url3"));
-        array.add(new RecipeModel("mousakas","melitzanes kai mpesamel","url1"));
-        array.add(new RecipeModel("pastitso","makaronia kai mpesamel","url2"));
-        array.add(new RecipeModel("makaronada","makaronia kai kimas","url3"));
-        array.add(new RecipeModel("mousakas","melitzanes kai mpesamel","url1"));
-        array.add(new RecipeModel("pastitso","makaronia kai mpesamel","url2"));
-        array.add(new RecipeModel("makaronada","makaronia kai kimas","url3"));
-        array.add(new RecipeModel("mousakas","melitzanes kai mpesamel","url1"));
-        array.add(new RecipeModel("pastitso","makaronia kai mpesamel","url2"));
-        array.add(new RecipeModel("makaronada","makaronia kai kimas","url3"));
-        array.add(new RecipeModel("mousakas","melitzanes kai mpesamel","url1"));
-        array.add(new RecipeModel("pastitso","makaronia kai mpesamel","url2"));
-        array.add(new RecipeModel("makaronada","makaronia kai kimas","url3"));
+        array.add(new Recipe());
+        array.add(new Recipe());
+
 
 
         return array;

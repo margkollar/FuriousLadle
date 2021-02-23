@@ -11,6 +11,12 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.example.myapplication.furiousladle.jsonhelpers.JsonResponse;
+import com.example.myapplication.furiousladle.models.Recipe;
+import com.google.gson.Gson;
+
+import java.util.ArrayList;
+import java.util.List;
 
 
 public class RecipeViewModel extends AndroidViewModel {
@@ -33,7 +39,7 @@ public class RecipeViewModel extends AndroidViewModel {
 
     }
     
-    void retrieveRecipe(RecipeListener callback, String parameter) {
+    public void retrieveRecipe(RecipeListener callback, String parameter) {
         // Request a string response from the provided URL.
         // TODO: check null parameter
         String url = prepareRequest(parameter);
@@ -41,7 +47,10 @@ public class RecipeViewModel extends AndroidViewModel {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
-                        callback.onSuccessResponse(response);
+                        JsonResponse jResp = new Gson().fromJson(response, JsonResponse.class);
+                        List<Recipe> recipes = new ArrayList<>();
+                        
+                        callback.onSuccessResponse(recipes);
                     }
                 },
                 new Response.ErrorListener() {
@@ -59,4 +68,5 @@ public class RecipeViewModel extends AndroidViewModel {
     protected void onCleared() {
         super.onCleared();
     }
+
 }

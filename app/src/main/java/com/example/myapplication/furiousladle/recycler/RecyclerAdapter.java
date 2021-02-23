@@ -8,16 +8,16 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.furiousladle.R;
-import com.example.myapplication.furiousladle.RecipeModel;
+import com.example.myapplication.furiousladle.models.Recipe;
 
 import java.util.List;
 
 public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    private List<RecipeModel> array;
+    private List<Recipe> array;
 
     //constructor:
-    public RecyclerAdapter(List<RecipeModel> array){
+    public RecyclerAdapter(List<Recipe> array){
         this.array=array;
     }
 
@@ -32,7 +32,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder,int position){
-        RecipeModel recipeModel=array.get(position);
+        Recipe recipeModel=array.get(position);
 
         if (holder instanceof RecyclerViewHolder){
             RecyclerViewHolder recyclerViewHolder= (RecyclerViewHolder)holder ;

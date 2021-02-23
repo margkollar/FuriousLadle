@@ -9,7 +9,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.furiousladle.R;
-import com.example.myapplication.furiousladle.RecipeModel;
+import com.example.myapplication.furiousladle.models.Recipe;
 
 public class RecyclerViewHolder extends RecyclerView.ViewHolder {
     public RecyclerViewHolder(@NonNull View itemView){
@@ -17,12 +17,12 @@ public class RecyclerViewHolder extends RecyclerView.ViewHolder {
     }
 
 
-    public void bind(RecipeModel r){
+    public void bind(Recipe r){
         TextView texTitle= itemView.findViewById(R.id.holder_title);
-        texTitle.setText(r.getRecipe());
+        texTitle.setText(r.getTitle());
 
         TextView textViewDescr=itemView.findViewById(R.id.holder_dec);
-        textViewDescr.setText(r.getDescr());
+        textViewDescr.setText(r.getOwner());
 
         ImageView img=itemView.findViewById(R.id.holder_img);
        //tha to doyme: img.setKati..... apo string url ..........
