@@ -39,8 +39,10 @@ public class RecipeViewModel extends AndroidViewModel {
     }
 
     public String prepareRequest(@NonNull String parameter){
-        return String.format("%s?app_id=%s&app_key=%s&q=%s",
+        String TheQuery = String.format("%s?app_id=%s&app_key=%s&q=%s",
                 baseAPIPath, appID, appKey, parameter);
+        Log.d("THE TERM",TheQuery);
+        return TheQuery;
 
     }
     
@@ -59,6 +61,7 @@ public class RecipeViewModel extends AndroidViewModel {
                         JsonResponse jResp = new Gson().fromJson(response, JsonResponse.class);
 //                       Jrecipes list
                         hits = jResp.getHit();
+                        Log.d("THE HIT", hits.toString());
 
 //                        for(JsonResponseHit jhit : hits){
 //                            for(JsonResponseRecipe jre. : jhit){
