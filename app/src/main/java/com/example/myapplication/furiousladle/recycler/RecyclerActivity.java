@@ -26,24 +26,19 @@ public class RecyclerActivity extends AppCompatActivity {
     protected void onPostCreate(@Nullable Bundle savedInstanceState){
         super.onPostCreate(savedInstanceState);
 
-        RecyclerView recyclerView=findViewById(R.id.recycler);
-        RecyclerAdapter adapter= new RecyclerAdapter(getData());
-        recyclerView.setAdapter(adapter);
+//        RecyclerView recyclerView=findViewById(R.id.recycler);
+//        RecyclerAdapter adapter= new RecyclerAdapter(getData());
+//        recyclerView.setAdapter(adapter);
 
     }
 
     private List<Recipe> getData(){
-        List<Recipe> array=new ArrayList<Recipe>();
-        //tra la la gemizoyme kapwsssssss ti lista
-        //oxi karfwta omws.............................
-
-        //proxeira na doume an douleyei :
-        array.add(new Recipe());
-        array.add(new Recipe());
+//        List<Recipe> array=new ArrayList<Recipe>();
 
 
 
-        return array;
+
+        return null;
 
     }
 

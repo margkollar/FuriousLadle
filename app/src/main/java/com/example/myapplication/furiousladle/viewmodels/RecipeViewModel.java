@@ -12,6 +12,8 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.example.myapplication.furiousladle.jsonhelpers.JsonResponse;
+import com.example.myapplication.furiousladle.jsonhelpers.JsonResponseHit;
+import com.example.myapplication.furiousladle.jsonhelpers.JsonResponseRecipe;
 import com.example.myapplication.furiousladle.models.Recipe;
 import com.google.gson.Gson;
 
@@ -49,7 +51,13 @@ public class RecipeViewModel extends AndroidViewModel {
                     public void onResponse(String response) {
                         JsonResponse jResp = new Gson().fromJson(response, JsonResponse.class);
                         List<Recipe> recipes = new ArrayList<>();
-                        
+                        List<JsonResponseRecipe> jrecipes = new ArrayList<>();
+                        List<JsonResponseHit> hits = new ArrayList<>();
+                        hits = jResp.getHits();
+
+                        for(int i=0;i<10;i++){
+                       recipes.add(new Recipe( hits.get(i).getRecipe().get(0).getLabel(),"hgkhjhgjhj", (ArrayList<String>) hits.get(0).getRecipe().get(0).getIngredientLines(),"abc","nnn","baa"));
+                        };
                         callback.onSuccessResponse(recipes);
                     }
                 },

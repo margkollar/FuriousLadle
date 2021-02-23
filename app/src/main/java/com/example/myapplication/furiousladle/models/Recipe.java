@@ -13,6 +13,7 @@ public class Recipe {
 
     public Recipe(){}
 
+
     public Recipe(String title, String owner, ArrayList<String> ingredients, String internalURL, String externalURL, String imageURL) {
         this.title = title;
         this.owner = owner;

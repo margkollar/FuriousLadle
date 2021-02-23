@@ -3,6 +3,7 @@ package com.example.myapplication.furiousladle;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.Intent;
@@ -22,6 +23,7 @@ import android.widget.Toast;
 
 import com.example.myapplication.furiousladle.models.Recipe;
 import com.example.myapplication.furiousladle.recycler.RecyclerActivity;
+import com.example.myapplication.furiousladle.recycler.RecyclerAdapter;
 import com.example.myapplication.furiousladle.viewmodels.RecipeListener;
 import com.example.myapplication.furiousladle.viewmodels.RecipeViewModel;
 
@@ -86,6 +88,9 @@ public class Search extends AppCompatActivity {
         recipeViewModel.retrieveRecipe(new RecipeListener() {
             @Override
             public void onSuccessResponse(List<Recipe> data) {
+                RecyclerView recyclerView=findViewById(R.id.recycler);
+                RecyclerAdapter adapter= new RecyclerAdapter(data);
+                recyclerView.setAdapter(adapter);
 
             }
 
