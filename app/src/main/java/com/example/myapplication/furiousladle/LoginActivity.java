@@ -41,6 +41,7 @@ public class LoginActivity extends AppCompatActivity {
                  // intent gia na paei sto search page
                     Intent intent = new Intent(LoginActivity.this, Search.class);
                     startActivity(intent);
+                    finish();
                 }
             }
         });
