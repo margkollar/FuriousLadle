@@ -1,6 +1,7 @@
 package com.example.myapplication.furiousladle.recycler;
 
 
+import android.app.Activity;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -8,6 +9,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.myapplication.furiousladle.R;
 import com.example.myapplication.furiousladle.models.Recipe;
 
@@ -25,7 +27,7 @@ public class RecyclerViewHolder extends RecyclerView.ViewHolder {
         textViewDescr.setText(r.getOwner());
 
         ImageView img=itemView.findViewById(R.id.holder_img);
-       //tha to doyme: img.setKati..... apo string url ..........
+        Glide.with(this.itemView).load(r.getImageURL()).into(img);
 
 
 
