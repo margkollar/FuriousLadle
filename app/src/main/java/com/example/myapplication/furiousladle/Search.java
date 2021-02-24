@@ -68,7 +68,7 @@ public class Search extends AppCompatActivity {
 
                     String userStr = String.valueOf(userSrh.getText());
 
-                    Toast.makeText(Search.this, "Searching", Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(Search.this, "Searching", Toast.LENGTH_SHORT).show();
 
                     Intent intent = new Intent(Search.this, RecyclerActivity.class);
                     Bundle parameter = new Bundle();

@@ -18,4 +18,5 @@
     <color name="appbar">#4A6572</color>
     <color name="text">#FF000000</color>
     <color name="error">#C80E0E</color>
+    <color name="title">#232F34</color>
 </resources>

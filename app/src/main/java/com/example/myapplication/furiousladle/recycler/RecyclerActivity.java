@@ -1,6 +1,9 @@
 package com.example.myapplication.furiousladle.recycler;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;

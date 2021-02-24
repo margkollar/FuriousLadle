@@ -41,7 +41,7 @@ public class RecipeViewModel extends AndroidViewModel {
     public String prepareRequest(@NonNull String parameter){
         String TheQuery = String.format("%s?app_id=%s&app_key=%s&q=%s",
                 baseAPIPath, appID, appKey, parameter);
-        Log.d("THE TERM",TheQuery);
+//        Log.d("THE TERM",TheQuery);
         return TheQuery;
 
     }
@@ -61,7 +61,6 @@ public class RecipeViewModel extends AndroidViewModel {
                         JsonResponse jResp = new Gson().fromJson(response, JsonResponse.class);
 //                       Jrecipes list
                         jHits = jResp.getHit();
-                        Log.d("THE HIT", jHits.toString());
 
                         for(JsonResponseHit item : jHits){
                             JsonResponseRecipe recipe = item.getRecipe();
@@ -74,15 +73,9 @@ public class RecipeViewModel extends AndroidViewModel {
                                 theRecipe.setIngredients(recipe.getIngredientLines());
 
                                 recipesModel.add(theRecipe);
-                                Log.d("JSON", theRecipe.toString());
-                                Toast.makeText(getApplication(),"Response",Toast.LENGTH_LONG).show();
+
                         }
 
-//                        for(JsonResponseHit jhit : hits){
-//                            for(JsonResponseRecipe jre. : jhit){
-                        for(int i=0;i<10;i++){
-
-                        };
                         callback.onSuccessResponse(recipesModel);
                     }
                 },
