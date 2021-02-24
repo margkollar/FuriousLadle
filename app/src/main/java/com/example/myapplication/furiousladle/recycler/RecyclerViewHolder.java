@@ -20,43 +20,39 @@ import com.example.myapplication.furiousladle.R;
 import com.example.myapplication.furiousladle.models.Recipe;
 
 public class RecyclerViewHolder extends RecyclerView.ViewHolder {
-    public RecyclerViewHolder(@NonNull View itemView){
+    private static final String EMPTY_STRING = "";
+
+    public RecyclerViewHolder(@NonNull View itemView) {
         super(itemView);
     }
 
 
-    public void bind(Recipe r){
-        TextView texTitle= itemView.findViewById(R.id.holder_title);
+    public void bind(Recipe r) {
+        TextView texTitle = itemView.findViewById(R.id.holder_title);
         texTitle.setText(r.getTitle());
 
-        TextView textViewDescr=itemView.findViewById(R.id.holder_dec);
+        TextView textViewDescr = itemView.findViewById(R.id.holder_dec);
 
 
-        ImageView img=itemView.findViewById(R.id.holder_img);
+        ImageView img = itemView.findViewById(R.id.holder_img);
         Glide.with(this.itemView).load(r.getImageURL()).into(img);
 
-        TextView ingredients= itemView.findViewById(R.id.holder_ingred);
-        ingredients.setText(r.getIngredients().toString());
-        String ingr =r.getOwner();
-        int i=0;
-        for (String ingredient: r.getIngredients())
-        {
-            if (i<5){
-                ingr.concat(ingr +  "'\n'" + ingredient);
-            }
-            i++;
-        }
-        ingr=ingr.replace("[", "");
-        ingr=ingr.replace("]", "");
-        textViewDescr.setText(ingr);
+        TextView ingredients = itemView.findViewById(R.id.holder_ingred);
+        textViewDescr.setText(r.getOwner());
 
-        TextView viewMore= itemView.findViewById(R.id.holder_details);
-        viewMore.setOnClickListener(new View.OnClickListener(){
-        public void onClick(View v){
-            Intent intent = new Intent();
-            intent.setAction(Intent.ACTION_VIEW);
-            intent.setData(Uri.parse(r.getExternalURL()));
-            ContextCompat.startActivity(v.getContext(),intent,null);
+        String ingr = EMPTY_STRING;
+        for (String ingredient : r.getIngredients()) {
+            ingr = ingr + "\n" + ingredient;
+        }
+        ingredients.setText(ingr);
+
+        TextView viewMore = itemView.findViewById(R.id.holder_details);
+        viewMore.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse(r.getExternalURL()));
+                ContextCompat.startActivity(v.getContext(), intent, null);
             }
         });
     }
