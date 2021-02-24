@@ -1,12 +1,13 @@
 package com.example.myapplication.furiousladle.models;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class Recipe {
     private String title;
     private String owner;
-    private ArrayList<String> ingredients;
+    private List<String> ingredients;
     private String internalURL;
     private String externalURL;
     private String imageURL;
@@ -39,11 +40,11 @@ public class Recipe {
         this.owner = owner;
     }
 
-    public ArrayList<String> getIngredients() {
+    public List<String> getIngredients() {
         return ingredients;
     }
 
-    public void setIngredients(ArrayList<String> ingredients) {
+    public void setIngredients(List<String> ingredients) {
         this.ingredients = ingredients;
     }
 

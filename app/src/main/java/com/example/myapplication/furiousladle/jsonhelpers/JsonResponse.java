@@ -7,7 +7,7 @@ public class JsonResponse {
     private int from;
     private int to;
     private int count;
-    private List<JsonResponseRecipe> hits;
+    private List<JsonResponseHit> hits;
 
     public int getFrom() {
         return from;
@@ -33,11 +33,11 @@ public class JsonResponse {
         this.count = count;
     }
 
-    public List<JsonResponseRecipe> getHit() {
+    public List<JsonResponseHit> getHit() {
         return hits;
     }
 
-    public void setHit(List<JsonResponseRecipe> hits) {
+    public void setHit(List<JsonResponseHit> hits) {
         this.hits = hits;
     }
 

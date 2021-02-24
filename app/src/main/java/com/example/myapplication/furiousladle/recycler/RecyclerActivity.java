@@ -30,7 +30,6 @@ public class RecyclerActivity extends AppCompatActivity {
         super.onPostCreate(savedInstanceState);
         Bundle parameters = getIntent().getExtras();
         RecipeViewModel recipeViewModel = new ViewModelProvider(this).get(RecipeViewModel.class);
-        Bundle theBundle = getIntent().getExtras();
         String theTerm = parameters.getString("searchterm");
         recipeViewModel.retrieveRecipe(new RecipeListener() {
             @Override

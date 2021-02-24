@@ -55,28 +55,33 @@ public class RecipeViewModel extends AndroidViewModel {
                     @Override
                     public void onResponse(String response) {
                         List<Recipe> recipesModel = new ArrayList<>();
-                        List<JsonResponseRecipe> jrecipes = new ArrayList<>();
-                        List<JsonResponseRecipe> hits = new ArrayList<>();
+                        List<JsonResponseHit> jHits = new ArrayList<>();
+                        List<JsonResponseRecipe> recipes = new ArrayList<>();
 
                         JsonResponse jResp = new Gson().fromJson(response, JsonResponse.class);
 //                       Jrecipes list
-                        hits = jResp.getHit();
-                        Log.d("THE HIT", hits.toString());
+                        jHits = jResp.getHit();
+                        Log.d("THE HIT", jHits.toString());
+
+                        for(JsonResponseHit item : jHits){
+                            JsonResponseRecipe recipe = item.getRecipe();
+                                Recipe theRecipe = new Recipe();
+                                theRecipe.setTitle(recipe.getLabel());
+                                theRecipe.setOwner(recipe.getSource());
+                                theRecipe.setImageURL(recipe.getImage());
+                                theRecipe.setExternalURL(recipe.getUrl());
+                                theRecipe.setInternalURL(recipe.getUri());
+                                theRecipe.setIngredients(recipe.getIngredientLines());
+
+                                recipesModel.add(theRecipe);
+                                Log.d("JSON", theRecipe.toString());
+                                Toast.makeText(getApplication(),"Response",Toast.LENGTH_LONG).show();
+                        }
 
 //                        for(JsonResponseHit jhit : hits){
 //                            for(JsonResponseRecipe jre. : jhit){
                         for(int i=0;i<10;i++){
-                            Recipe theRecipe = new Recipe();
-                            theRecipe.setTitle(hits.get(i).getLabel());
-                            theRecipe.setOwner(hits.get(i).getSource());
-                            theRecipe.setImageURL(hits.get(i).getImage());
-                            theRecipe.setExternalURL(hits.get(i).getUrl());
-                            theRecipe.setInternalURL(hits.get(i).getUri());
-                            theRecipe.setIngredients((ArrayList<String>)hits.get(i).getIngredientLines());
 
-                            recipesModel.add(theRecipe);
-                            Log.d("JSON", theRecipe.toString());
-                            Toast.makeText(getApplication(),"Response",Toast.LENGTH_LONG).show();
                         };
                         callback.onSuccessResponse(recipesModel);
                     }

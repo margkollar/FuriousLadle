@@ -4,14 +4,16 @@ import java.util.List;
 import java.util.Objects;
 
 public class JsonResponseHit {
-    private List<JsonResponseRecipe> Recipe;
 
-    public List<JsonResponseRecipe> getRecipe() {
-        return Recipe;
+
+    private JsonResponseRecipe recipe;
+
+    public JsonResponseRecipe getRecipe() {
+        return recipe;
     }
 
-    public void setRecipe(List<JsonResponseRecipe> recipe) {
-        Recipe = recipe;
+    public void setRecipe(JsonResponseRecipe recipe) {
+        this.recipe = recipe;
     }
 
     @Override
@@ -19,18 +21,11 @@ public class JsonResponseHit {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         JsonResponseHit that = (JsonResponseHit) o;
-        return Recipe.equals(that.Recipe);
+        return Objects.equals(recipe, that.recipe);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(Recipe);
-    }
-
-    @Override
-    public String toString() {
-        return "JsonResponseHit{" +
-                "Recipe=" + Recipe +
-                '}';
+        return Objects.hash(recipe);
     }
 }
