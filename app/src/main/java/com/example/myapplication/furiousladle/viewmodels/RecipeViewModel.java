@@ -25,6 +25,7 @@ import java.util.List;
 
 
 public class RecipeViewModel extends AndroidViewModel {
+    private static final String EMPTY_STRING = "";
     private final String appID = "eb3439ca";
     private final String appKey = "cc857c2c04f1702d19d6bc1fa6099c04";
     private final String baseAPIPath = "https://api.edamam.com/search";
@@ -59,6 +60,9 @@ public class RecipeViewModel extends AndroidViewModel {
                         List<JsonResponseRecipe> recipes = new ArrayList<>();
 
                         JsonResponse jResp = new Gson().fromJson(response, JsonResponse.class);
+                        if(jResp.getCount() <=0){
+                            callback.onErrorResponse(EMPTY_STRING);
+                        }
 //                       Jrecipes list
                         jHits = jResp.getHit();
 
