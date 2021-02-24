@@ -46,21 +46,9 @@ public class RecyclerActivity extends AppCompatActivity {
         }, theTerm);
 
 
-//        RecyclerView recyclerView=findViewById(R.id.recycler);
-//        RecyclerAdapter adapter= new RecyclerAdapter(getData());
-//        recyclerView.setAdapter(adapter);
 
     }
 
-    private List<Recipe> getData(){
-//        List<Recipe> array=new ArrayList<Recipe>();
-
-
-
-
-        return null;
-
-    }
 
 
 
