@@ -67,7 +67,7 @@ public class RecyclerViewHolder extends RecyclerView.ViewHolder {
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setAction(Intent.ACTION_SEND);
-                intent.setType("image/*");
+                intent.setType("text/plain");
                 intent.putExtra(Intent.EXTRA_TEXT, r.getExternalURL());
                 Intent shareIntent = Intent.createChooser(intent, null);
 
