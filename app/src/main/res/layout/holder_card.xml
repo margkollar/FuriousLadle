@@ -1,126 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
+<com.google.android.material.card.MaterialCardView
+    android:clickable="true"
+    android:focusable="true"
+    android:checkable="true"
+    android:id="@+id/card"
     android:layout_height="wrap_content"
-    android:backgroundTint="@color/title"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toTopOf="parent">
+    android:layout_margin="8dp"
+    android:layout_width="match_parent"
+    app:cardBackgroundColor="@color/appbar"
+    app:cardCornerRadius="5dp"
+    app:layout_constraintLeft_toLeftOf="parent"
+    app:layout_constraintRight_toRightOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/card"
-        android:layout_width="match_parent"
+    <LinearLayout
         android:layout_height="wrap_content"
-        android:layout_margin="8dp"
-        app:cardBackgroundColor="@color/appbar"
-        app:cardCornerRadius="5dp"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_width="match_parent"
+        android:orientation="vertical">
+
+        <!-- Media -->
+        <ImageView
+            android:backgroundTint="@color/buttons"
+            android:id="@+id/holder_img"
+            android:layout_height="194dp"
+            android:layout_width="match_parent"
+            android:outlineAmbientShadowColor="@color/title"
+            android:scaleType="centerCrop"
+            tools:src="@mipmap/ic_launcher" />
 
         <LinearLayout
-            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:padding="16dp">
 
-            <!-- Media -->
-            <ImageView
-                android:id="@+id/holder_img"
-                android:layout_width="match_parent"
-                android:layout_height="194dp"
-                android:backgroundTint="@color/buttons"
-                android:outlineAmbientShadowColor="@color/title"
-                android:scaleType="centerCrop"
-                tools:src="@mipmap/ic_launcher" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
+            <!-- Title, secondary and supporting text -->
+            <TextView
+                android:background="@color/buttons"
+                android:id="@+id/holder_title"
                 android:layout_height="wrap_content"
-                android:orientation="vertical"
-                android:padding="16dp">
+                android:layout_width="match_parent"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textColor="@color/title"
+                tools:text="Title" />
 
-                <!-- Title, secondary and supporting text -->
-                <TextView
-                    android:id="@+id/holder_title"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:background="@color/buttons"
-                    android:textAppearance="?attr/textAppearanceHeadline6"
-                    android:textColor="@color/title"
-                    tools:text="Title" />
-
-                <TextView
-                    android:id="@+id/holder_dec"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="16dp"
-                    android:backgroundTint="@color/appbar"
-                    android:textAppearance="?attr/textAppearanceBody2"
-                    android:textColor="@color/white"
-                    tools:text="Chef" />
-
-                <ScrollView
-                    android:id="@+id/scroller"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-
-                    android:scrollbars="vertical">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:orientation="vertical"
-                        >
-
-                        <TextView
-                            android:id="@+id/holder_ingred"
-                            android:layout_width="wrap_content"
-                            android:layout_height="64dp"
-                            android:layout_marginTop="16dp"
-                            android:backgroundTint="@color/appbar"
-                            android:textAppearance="?attr/textAppearanceBody2"
-                            android:textColor="@color/white"
-                            tools:text="Ingredients" />
-                    </LinearLayout>
-                </ScrollView>
-
-            </LinearLayout>
-
-            <!-- Buttons -->
-            <LinearLayout
+            <TextView
+                android:backgroundTint="@color/appbar"
+                android:id="@+id/holder_dec"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:layout_width="wrap_content"
+                android:textAppearance="?attr/textAppearanceBody2"
+                android:textColor="@color/white"
+                tools:text="Chef" />
+
+            <ScrollView
+                android:id="@+id/scroller"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
-                android:orientation="horizontal">
+                android:layout_width="wrap_content"
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/holder_share"
-                    style="?attr/borderlessButtonStyle"
-                    android:layout_width="128dp"
+                android:scrollbars="vertical">
+
+                <LinearLayout
                     android:layout_height="wrap_content"
-                    android:layout_marginEnd="64dp"
-                    android:backgroundTint="@color/appbar"
-                    android:clickable="true"
-                    android:text="Share"
-                    android:textColor="@color/buttons" />
+                    android:layout_width="match_parent"
+                    android:orientation="vertical">
 
-                <com.google.android.material.button.MaterialButton
-                    android:id="@+id/holder_details"
-                    style="?attr/borderlessButtonStyle"
-                    android:layout_width="128dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="64dp"
-                    android:backgroundTint="@color/appbar"
-                    android:clickable="true"
-                    android:onClick="onClick"
-                    android:text="@string/details"
-                    android:textColor="@color/buttons" />
-
-            </LinearLayout>
+                    <TextView
+                        android:backgroundTint="@color/appbar"
+                        android:id="@+id/holder_ingred"
+                        android:layout_height="64dp"
+                        android:layout_marginTop="16dp"
+                        android:layout_width="wrap_content"
+                        android:textAppearance="?attr/textAppearanceBody2"
+                        android:textColor="@color/white"
+                        tools:text="Ingredients" />
+                </LinearLayout>
+            </ScrollView>
 
         </LinearLayout>
 
-    </com.google.android.material.card.MaterialCardView>
+        <!-- Buttons -->
+        <LinearLayout
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_width="wrap_content"
+            android:orientation="horizontal">
 
-</androidx.cardview.widget.CardView>
+            <com.google.android.material.button.MaterialButton
+                style="?attr/borderlessButtonStyle"
+                android:backgroundTint="@color/appbar"
+                android:clickable="true"
+                android:id="@+id/holder_share"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="64dp"
+                android:layout_width="128dp"
+                android:text="Share"
+                android:textColor="@color/buttons" />
+
+            <com.google.android.material.button.MaterialButton
+                style="?attr/borderlessButtonStyle"
+                android:backgroundTint="@color/appbar"
+                android:clickable="true"
+                android:id="@+id/holder_details"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="64dp"
+                android:layout_width="128dp"
+                android:onClick="onClick"
+                android:text="@string/details"
+                android:textColor="@color/buttons" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</com.google.android.material.card.MaterialCardView>
