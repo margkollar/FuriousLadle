@@ -5,6 +5,9 @@ import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
 import android.text.method.ScrollingMovementMethod;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -58,4 +61,7 @@ public class RecyclerViewHolder extends RecyclerView.ViewHolder {
             }
         });
     }
+
+
+
 }

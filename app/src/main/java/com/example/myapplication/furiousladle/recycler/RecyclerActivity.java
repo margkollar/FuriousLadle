@@ -3,6 +3,9 @@ package com.example.myapplication.furiousladle.recycler;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -12,6 +15,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.myapplication.furiousladle.LoginActivity;
+import com.example.myapplication.furiousladle.Profile;
 import com.example.myapplication.furiousladle.R;
 import com.example.myapplication.furiousladle.models.Recipe;
 import com.example.myapplication.furiousladle.viewmodels.RecipeListener;
@@ -52,7 +57,24 @@ public class RecyclerActivity extends AppCompatActivity {
 
 
     }
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu, menu);
+        // return true so that the menu pop up is opened
+        return true;
+    }
 
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        if (item.getItemId() == R.id.profil) {
+//            Toast.makeText(this, "Search Button", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(RecyclerActivity.this, Profile.class);
+            startActivity(intent);
+
+        }
+        return super.onOptionsItemSelected(item);
+    }
 
 
 
