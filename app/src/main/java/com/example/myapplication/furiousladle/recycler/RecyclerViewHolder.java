@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.text.method.ScrollingMovementMethod;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,6 +20,8 @@ import com.bumptech.glide.Glide;
 import com.example.myapplication.furiousladle.LoginActivity;
 import com.example.myapplication.furiousladle.R;
 import com.example.myapplication.furiousladle.models.Recipe;
+
+import static androidx.core.content.ContextCompat.startActivity;
 
 public class RecyclerViewHolder extends RecyclerView.ViewHolder {
     private static final String EMPTY_STRING = "";
@@ -48,13 +51,28 @@ public class RecyclerViewHolder extends RecyclerView.ViewHolder {
         ingredients.setText(ingr);
         ingredients.setMovementMethod(new ScrollingMovementMethod());
 
-        TextView viewMore = itemView.findViewById(R.id.holder_details);
+        Button viewMore = itemView.findViewById(R.id.holder_details);
         viewMore.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent = new Intent();
                 intent.setAction(Intent.ACTION_VIEW);
                 intent.setData(Uri.parse(r.getExternalURL()));
-                ContextCompat.startActivity(v.getContext(), intent, null);
+                startActivity(v.getContext(), intent, null);
+            }
+        });
+
+        Button shareBtn = itemView.findViewById(R.id.holder_share);
+        shareBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_SEND);
+                intent.setType("image/*");
+                intent.putExtra(Intent.EXTRA_TEXT, r.getExternalURL());
+                Intent shareIntent = Intent.createChooser(intent, null);
+
+                startActivity(v.getContext(), shareIntent, null);
+
             }
         });
     }
