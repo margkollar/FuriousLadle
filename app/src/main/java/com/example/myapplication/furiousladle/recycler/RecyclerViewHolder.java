@@ -4,6 +4,7 @@ package com.example.myapplication.furiousladle.recycler;
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
+import android.text.method.ScrollingMovementMethod;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -45,6 +46,7 @@ public class RecyclerViewHolder extends RecyclerView.ViewHolder {
             ingr = ingr + "\n" + ingredient;
         }
         ingredients.setText(ingr);
+        ingredients.setMovementMethod(new ScrollingMovementMethod());
 
         TextView viewMore = itemView.findViewById(R.id.holder_details);
         viewMore.setOnClickListener(new View.OnClickListener() {
