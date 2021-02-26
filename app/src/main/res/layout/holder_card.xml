@@ -30,6 +30,14 @@
             android:outlineAmbientShadowColor="@color/title"
             android:scaleType="centerCrop"
             tools:src="@mipmap/ic_launcher" />
+        <TextView
+            android:background="@color/buttons"
+            android:id="@+id/holder_title"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:textAppearance="?attr/textAppearanceHeadline6"
+            android:textColor="@color/title"
+            tools:text="Title" />
 
         <LinearLayout
             android:layout_height="wrap_content"
@@ -38,14 +46,7 @@
             android:padding="16dp">
 
             <!-- Title, secondary and supporting text -->
-            <TextView
-                android:background="@color/buttons"
-                android:id="@+id/holder_title"
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:textAppearance="?attr/textAppearanceHeadline6"
-                android:textColor="@color/title"
-                tools:text="Title" />
+
 
             <TextView
                 android:backgroundTint="@color/appbar"
