@@ -12,13 +12,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.FuriousLadle">
+        <activity android:name=".Profile"></activity>
         <activity
             android:name=".Search"
             android:theme="@style/NoActionBar" />
         <activity android:name=".recycler.RecyclerActivity" />
-        <activity
-            android:name=".LoginActivity"
-            android:theme="@style/NoActionBar" />
+        <activity android:name=".LoginActivity"
+         android:theme="@style/NoActionBar" />
         <activity
             android:name=".Splash"
             android:theme="@style/NoActionBar">
