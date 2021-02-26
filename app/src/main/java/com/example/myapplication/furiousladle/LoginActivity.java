@@ -39,8 +39,8 @@ public class LoginActivity extends AppCompatActivity {
                 String userStr = userNameEdit.getText().toString();
                 String passwdStr = passwdEdit.getText().toString();
 
-                if(userStr.matches("") || passwdStr.matches("")){
-                    Toast.makeText(LoginActivity.this, "username or password empty", Toast.LENGTH_SHORT).show();
+                if(!userStr.equalsIgnoreCase("furious") && !passwdStr.equalsIgnoreCase("ladle")){
+                    Toast.makeText(LoginActivity.this, "Invalid username or password", Toast.LENGTH_SHORT).show();
                 }else {
                  // intent gia na paei sto search page
                     Intent intent = new Intent(LoginActivity.this, Search.class);
