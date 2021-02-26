@@ -4,6 +4,7 @@ package com.example.myapplication.furiousladle.recycler;
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
+import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -22,6 +23,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.bumptech.glide.Glide;
 import com.example.myapplication.furiousladle.LoginActivity;
 import com.example.myapplication.furiousladle.R;
+import com.example.myapplication.furiousladle.Search;
+import com.example.myapplication.furiousladle.WebBrowser;
 import com.example.myapplication.furiousladle.models.Recipe;
 
 import static androidx.core.content.ContextCompat.startActivity;
@@ -57,9 +60,17 @@ public class RecyclerViewHolder extends RecyclerView.ViewHolder {
         Button viewMore = itemView.findViewById(R.id.holder_details);
         viewMore.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                Intent intent = new Intent();
-                intent.setAction(Intent.ACTION_VIEW);
-                intent.setData(Uri.parse(r.getExternalURL()));
+//                old external browser code
+
+//                Intent intent = new Intent();
+//                intent.setAction(Intent.ACTION_VIEW);
+//                intent.setData(Uri.parse(r.getExternalURL()));
+//                startActivity(v.getContext(), intent, null);
+
+                Intent intent = new Intent(v.getContext(), WebBrowser.class);
+                Bundle parameter = new Bundle();
+                parameter.putString("theURL", r.getExternalURL());
+                intent.putExtras(parameter);
                 startActivity(v.getContext(), intent, null);
             }
         });
