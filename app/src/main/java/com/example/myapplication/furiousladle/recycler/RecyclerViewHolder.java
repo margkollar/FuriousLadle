@@ -67,6 +67,7 @@ public class RecyclerViewHolder extends RecyclerView.ViewHolder {
 //                intent.setData(Uri.parse(r.getExternalURL()));
 //                startActivity(v.getContext(), intent, null);
 
+//              internal browser code
                 Intent intent = new Intent(v.getContext(), WebBrowser.class);
                 Bundle parameter = new Bundle();
                 parameter.putString("theURL", r.getExternalURL());
