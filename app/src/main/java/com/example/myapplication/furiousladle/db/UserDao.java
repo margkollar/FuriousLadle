@@ -33,6 +33,6 @@ public interface UserDao {
     UserEntity getUserEntity(int id);
 
     //query
-    @Query("SELECT * FROM userentity WHERE username=(:username) AND password=(:password)")
+    @Query("SELECT * FROM userentity WHERE username LIKE :username AND password LIKE :password")
     UserEntity login(String username,String password);
 }
