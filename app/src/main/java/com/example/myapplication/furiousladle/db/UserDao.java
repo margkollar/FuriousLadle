@@ -6,6 +6,8 @@ import androidx.room.Insert;
 import androidx.room.Query;
 import androidx.room.Update;
 
+import java.util.List;
+
 @Dao
 public interface UserDao {
     @Insert
@@ -20,6 +22,15 @@ public interface UserDao {
     @Update
     void update(UserEntity entity);
 
+
+
+    //get the list of  all users
+    @Query("SELECT * FROM userentity")
+    List<UserEntity> getEntity();
+
+    //get user by id
+    @Query("SELECT * FROM userentity WHERE user_id=:id")
+    UserEntity getUserEntity(int id);
 
     //query
     @Query("SELECT * FROM userentity WHERE username=(:username) AND password=(:password)")
