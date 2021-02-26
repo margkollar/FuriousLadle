@@ -40,7 +40,7 @@ public class RecipeViewModel extends AndroidViewModel {
     }
 
     public String prepareRequest(@NonNull String parameter){
-        String TheQuery = String.format("%s?app_id=%s&app_key=%s&q=%s",
+        String TheQuery = String.format("%s?app_id=%s&app_key=%s&from=0&to=20&q=%s",
                 baseAPIPath, appID, appKey, parameter);
 //        Log.d("THE TERM",TheQuery);
         return TheQuery;
