@@ -24,7 +24,7 @@ public interface UserDao {
 
 
 
-    //get a list of users
+    //get the list of  all users
     @Query("SELECT * FROM userentity")
     List<UserEntity> getEntity();
 
