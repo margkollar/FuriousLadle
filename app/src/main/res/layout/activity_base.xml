@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".db.BaseActivity">
 
-    <
+
 
     <TextView
         android:id="@+id/text_counter"
