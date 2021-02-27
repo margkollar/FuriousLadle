@@ -1,120 +1,101 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.google.android.material.card.MaterialCardView
-    android:clickable="true"
-    android:focusable="true"
-    android:checkable="true"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/card"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
-    android:layout_width="match_parent"
     app:cardBackgroundColor="@color/appbar"
     app:cardCornerRadius="5dp"
     app:layout_constraintLeft_toLeftOf="parent"
     app:layout_constraintRight_toRightOf="parent"
     app:layout_constraintTop_toTopOf="parent"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
-
-    <LinearLayout
-        android:layout_height="wrap_content"
+    app:strokeColor="@color/teal_700"
+    app:strokeWidth="4dp">
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
-
         <!-- Media -->
         <ImageView
-            android:backgroundTint="@color/buttons"
             android:id="@+id/holder_img"
-            android:layout_height="194dp"
             android:layout_width="match_parent"
+            android:layout_height="194dp"
+            android:backgroundTint="@color/buttons"
             android:outlineAmbientShadowColor="@color/title"
             android:scaleType="centerCrop"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
             tools:src="@mipmap/ic_launcher" />
         <TextView
-            android:background="@color/buttons"
             android:id="@+id/holder_title"
-            android:layout_height="wrap_content"
             android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/buttons"
+            android:paddingStart="12dp"
             android:paddingTop="4dp"
-            android:paddingStart="4dp"
-            android:paddingEnd="8dp"
-            android:paddingBottom="8dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="4dp"
             android:textAppearance="?attr/textAppearanceHeadline6"
             android:textColor="@color/title"
+            app:layout_constraintTop_toBottomOf="@id/holder_img"
             tools:text="Title" />
-
-        <LinearLayout
-            android:layout_height="wrap_content"
-            android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:padding="16dp">
-
-
-
-
-            <TextView
-                android:backgroundTint="@color/appbar"
-                android:id="@+id/holder_dec"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_width="wrap_content"
-                android:textAppearance="?attr/textAppearanceBody2"
-                android:textColor="@color/white"
-                tools:text="Chef" />
-
-
-                <LinearLayout
-                    android:layout_height="wrap_content"
-                    android:layout_width="match_parent"
-                    android:orientation="vertical">
-
-                    <TextView
-                        android:backgroundTint="@color/appbar"
-                        android:id="@+id/holder_ingred"
-                        android:ellipsize="end"
-                        android:maxLines="4"
-                        android:layout_height="64dp"
-                        android:layout_marginTop="16dp"
-                        android:layout_width="wrap_content"
-                        android:textAppearance="?attr/textAppearanceBody2"
-                        android:textColor="@color/white"
-                        tools:text="Ingredients" />
-                </LinearLayout>
-
-        </LinearLayout>
-
-        <!-- Buttons -->
-        <LinearLayout
-            android:layout_height="wrap_content"
-            android:layout_margin="8dp"
+        <TextView
+            android:id="@+id/holder_dec"
             android:layout_width="wrap_content"
-            android:orientation="horizontal">
-
-            <com.google.android.material.button.MaterialButton
-                style="?attr/borderlessButtonStyle"
-                android:backgroundTint="@color/appbar"
-                android:clickable="true"
-                android:id="@+id/holder_share"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="64dp"
-                android:layout_width="128dp"
-                android:text="Share"
-                android:textColor="@color/buttons" />
-
-            <com.google.android.material.button.MaterialButton
-                style="?attr/borderlessButtonStyle"
-                android:backgroundTint="@color/appbar"
-                android:clickable="true"
-                android:id="@+id/holder_details"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="64dp"
-                android:layout_width="128dp"
-                android:onClick="onClick"
-                android:text="@string/details"
-                android:textColor="@color/buttons" />
-
-        </LinearLayout>
-
-    </LinearLayout>
-
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/appbar"
+            android:paddingStart="12dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="4dp"
+            android:textAppearance="?attr/textAppearanceBody2"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/holder_title"
+            tools:text="Chef" />
+        <TextView
+            android:id="@+id/holder_ingred"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/appbar"
+            android:ellipsize="end"
+            android:maxLines="4"
+            android:paddingStart="12dp"
+            android:paddingTop="4dp"
+            android:paddingEnd="12dp"
+            android:paddingBottom="4dp"
+            android:textAppearance="?attr/textAppearanceBody2"
+            android:textColor="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/holder_dec"
+            tools:text="Ingredients" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/holder_share"
+            style="?attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            android:backgroundTint="@color/appbar"
+            android:text="Share"
+            android:textColor="@color/buttons"
+            app:layout_constraintEnd_toStartOf="@id/holder_details"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/holder_ingred" />
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/holder_details"
+            style="?attr/borderlessButtonStyle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp"
+            android:backgroundTint="@color/appbar"
+            android:text="View more"
+            android:textColor="@color/buttons"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/holder_share"
+            app:layout_constraintTop_toBottomOf="@id/holder_ingred" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </com.google.android.material.card.MaterialCardView>
