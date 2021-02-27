@@ -8,6 +8,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="recycler.RecyclerActivity">
 
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler"
         android:layout_width="match_parent"
@@ -16,5 +17,6 @@
         android:orientation="vertical"
         android:background="@color/appbar"
         tools:listitem="@layout/holder_card"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

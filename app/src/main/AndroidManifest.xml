@@ -1,30 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.myapplication.furiousladle">
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <application
-        android:usesCleartextTraffic="true"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.FuriousLadle">
-        <activity android:name=".WebBrowser"
+        android:theme="@style/Theme.FuriousLadle"
+        android:usesCleartextTraffic="true">
+        <activity
+            android:name=".WebBrowser"
             android:label="Details"
             android:launchMode="singleTop"
-            android:parentActivityName="com.example.myapplication.furiousladle.recycler.RecyclerActivity"
-            />
-        <activity android:name=".recycler.RecyclerActivity"
+            android:parentActivityName=".recycler.RecyclerActivity" />
+        <activity
+            android:name=".recycler.RecyclerActivity"
             android:launchMode="singleTop"
-            android:parentActivityName="com.example.myapplication.furiousladle.Search"
-            />
-        <activity android:name=".Profile"
+            android:parentActivityName=".Search" />
+        <activity
+            android:name=".Profile"
             android:label="Profile"
             android:launchMode="singleTop"
-            android:parentActivityName="com.example.myapplication.furiousladle.recycler.RecyclerActivity"
-            />
+            android:parentActivityName=".recycler.RecyclerActivity" />
         <activity
             android:name=".Search"
             android:theme="@style/NoActionBar" />
@@ -36,8 +38,10 @@
             android:theme="@style/NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>
+
 </manifest>

@@ -5,4 +5,6 @@
     <dimen name="dp64">64dp</dimen>
     <dimen name="sp28">28sp</dimen>
     <dimen name="sp7">7sp</dimen>
+    <dimen name="list_item_spacing">16dp</dimen>
+    <dimen name="list_item_spacing_half">8dp</dimen>
 </resources>

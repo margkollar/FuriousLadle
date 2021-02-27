@@ -17,6 +17,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.furiousladle.LoginActivity;
 import com.example.myapplication.furiousladle.Profile;
+import com.example.myapplication.furiousladle.ProfileFragment;
 import com.example.myapplication.furiousladle.R;
 import com.example.myapplication.furiousladle.models.Recipe;
 import com.example.myapplication.furiousladle.viewmodels.RecipeListener;
@@ -31,6 +32,7 @@ public class RecyclerActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.recycler_layout);
+
 
     }
 
@@ -68,9 +70,8 @@ public class RecyclerActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
         if (item.getItemId() == R.id.profil) {
-//            Toast.makeText(this, "Search Button", Toast.LENGTH_SHORT).show();
-            Intent intent = new Intent(RecyclerActivity.this, Profile.class);
-            startActivity(intent);
+            ProfileFragment fragment = new ProfileFragment();
+            fragment.show(getSupportFragmentManager(), "TAG");
 
         }
         return super.onOptionsItemSelected(item);

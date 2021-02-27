@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ProfileFragment">
+
+    <com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tool="http://schemas.android.com/tools"
+        android:id="@+id/profile_card"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:checkable="true"
+        android:clickable="true"
+        android:focusable="true"
+        app:cardBackgroundColor="@color/appbar"
+        app:cardCornerRadius="5dp"
+        app:layout_constraintBottom_toTopOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:behavior_hideable="true"
+        app:behavior_peekHeight="16dp"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/appbar"
+            android:backgroundTint="@color/appbar"
+            android:hapticFeedbackEnabled="false"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Media -->
+
+
+            <ImageView
+                android:id="@+id/holder_img"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginTop="@dimen/dp16"
+                android:backgroundTint="@color/appbar"
+                android:outlineAmbientShadowColor="@color/title"
+                android:scaleType="centerCrop"
+                android:src="@drawable/user_icon"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toLeftOf="parent" />
+            <ImageView
+                android:id="@+id/name_icon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="@dimen/dp16"
+                android:layout_marginLeft="@dimen/dp16"
+                android:backgroundTint="@color/appbar"
+                android:outlineAmbientShadowColor="@color/title"
+                android:scaleType="centerCrop"
+                android:src="@drawable/name"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/holder_img"/>
+            <ImageView
+                android:id="@+id/user_icon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="@dimen/dp16"
+                android:layout_marginLeft="@dimen/dp16"
+                android:backgroundTint="@color/appbar"
+                android:outlineAmbientShadowColor="@color/title"
+                android:scaleType="centerCrop"
+                android:src="@drawable/username"
+                app:layout_constraintTop_toBottomOf="@id/name_icon"
+                app:layout_constraintLeft_toRightOf="@id/holder_img"/>
+            <ImageView
+                android:id="@+id/pass_icon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="@dimen/dp16"
+                android:layout_marginLeft="@dimen/dp16"
+                android:backgroundTint="@color/appbar"
+                android:outlineAmbientShadowColor="@color/title"
+                android:scaleType="centerCrop"
+                android:src="@drawable/eye"
+                app:layout_constraintTop_toBottomOf="@id/user_icon"
+                app:layout_constraintLeft_toRightOf="@id/holder_img"/>
+            <ImageView
+                android:id="@+id/bio_icon"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginTop="@dimen/dp16"
+                android:layout_marginLeft="@dimen/dp16"
+                android:backgroundTint="@color/appbar"
+                android:outlineAmbientShadowColor="@color/title"
+                android:scaleType="centerCrop"
+                android:src="@drawable/bio"
+                app:layout_constraintTop_toBottomOf="@id/pass_icon"
+                app:layout_constraintLeft_toRightOf="@id/holder_img"/>
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp16"
+                android:layout_marginLeft="@dimen/dp16"
+                android:background="@color/appbar"
+                tool:text="Name"
+                android:textAppearance="?attr/textAppearanceHeadline6"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintLeft_toRightOf="@id/name_icon"
+                />
+
+            <TextView
+                android:id="@+id/username"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp16"
+                android:layout_marginLeft="@dimen/dp16"
+                android:backgroundTint="@color/appbar"
+                android:ellipsize="end"
+                android:maxLines="4"
+                tool:text="Username"
+                android:textAppearance="?attr/textAppearanceBody2"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/name_icon"
+                app:layout_constraintLeft_toRightOf="@id/user_icon"
+                />
+
+            <TextView
+
+                android:id="@+id/password"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp16"
+                android:layout_marginLeft="@dimen/dp16"
+                android:backgroundTint="@color/appbar"
+                android:text="*****"
+                android:textAppearance="?attr/textAppearanceBody2"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/user_icon"
+                app:layout_constraintLeft_toRightOf="@id/pass_icon"
+                />
+
+
+            <TextView
+                android:id="@+id/bio"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dp16"
+                android:layout_marginLeft="@dimen/dp16"
+                android:backgroundTint="@color/appbar"
+                android:ellipsize="end"
+                android:maxLines="4"
+                tool:text="Bio"
+                android:textAppearance="?attr/textAppearanceBody2"
+                android:textColor="@color/white"
+                app:layout_constraintTop_toBottomOf="@id/pass_icon"
+                app:layout_constraintLeft_toRightOf="@id/bio_icon"
+                app:layout_constraintRight_toRightOf="parent"
+                />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+</FrameLayout>

@@ -12,7 +12,10 @@
     app:cardCornerRadius="5dp"
     app:layout_constraintBottom_toTopOf="parent"
     app:layout_constraintLeft_toLeftOf="parent"
-    app:layout_constraintRight_toRightOf="parent">
+    app:layout_constraintRight_toRightOf="parent"
+    app:behavior_hideable="true"
+    app:behavior_peekHeight="16dp"
+    app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
 
 
     <androidx.constraintlayout.widget.ConstraintLayout
