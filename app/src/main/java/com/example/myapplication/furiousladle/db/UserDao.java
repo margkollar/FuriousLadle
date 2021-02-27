@@ -35,4 +35,7 @@ public interface UserDao {
     //query
     @Query("SELECT * FROM userentity WHERE username LIKE :username AND password LIKE :password")
     UserEntity login(String username,String password);
+
+    @Query("SELECT * FROM userentity LIMIT 1")
+    UserEntity getFirstEntity();
 }
