@@ -54,7 +54,7 @@ public class Splash extends AppCompatActivity {
 
     private void doInsert(InsertCallbackListener listener){
         //TODO id autoincrement thelei null ????
-        UserEntity entity = new UserEntity(1, "furious", "ladle", "furious",
+        UserEntity entity = new UserEntity("furious", "ladle", "furious",
                 "ladle", "God forsaken Glutton, likes junk food sweets and hates like hell the gym.");
         new InsertUserAsyncTask(this,listener).execute(entity);
         }
