@@ -3,19 +3,31 @@ package com.example.myapplication.furiousladle.db;
 import android.content.Context;
 import android.os.AsyncTask;
 
-import androidx.annotation.NonNull;
 import androidx.room.Room;
 
-public class UserEntityAsyncTask extends AsyncTask<UserEntity, UserEntity, Boolean> {
-    UserDatabase dataBase;
+public class UserEntityAsyncTask extends AsyncTask<UserEntity,UserEntity,Boolean> {
+    UserDatabase userDatabase;
 
-    public UserEntityAsyncTask(Context context, @NonNull String dbName) {
-        this.dataBase = Room.databaseBuilder(context, UserDatabase.class, "fl_db").build();
+    public UserEntityAsyncTask(Context context){
+        userDatabase= Room.databaseBuilder(context,UserDatabase.class,"furious_ladle_db").build();
+
     }
+
 
     @Override
-    protected Boolean doInBackground(UserEntity... userEntities) {
-        dataBase.userDao().insert(userEntities);
-        return false;
+    protected Boolean doInBackground(UserEntity... entities){
+        userDatabase.getUserDao().insert(entities);
+        return true;
+
     }
+
+
+
+    @Override
+    protected void onPostExecute(Boolean aBoolean){
+        super.onPostExecute(aBoolean);
+    }
+
+
+
 }
