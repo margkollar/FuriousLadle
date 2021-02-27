@@ -1,9 +1,13 @@
 package com.example.myapplication.furiousladle;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.view.menu.MenuView;
 import androidx.room.Room;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
 
 import com.example.myapplication.furiousladle.db.UserDatabase;
 import com.example.myapplication.furiousladle.db.UserEntity;
@@ -23,12 +27,26 @@ public class Profile extends AppCompatActivity {
             @Override
             public void onSuccessResult(UserEntity entity) {
 
-                fillProfileCard(entity);
+//                fillProfileCard(entity);
+                TextView name = findViewById(R.id.name);
+                TextView userName = findViewById(R.id.username);
+                TextView bio = findViewById(R.id.bio);
+
+                name.setText(entity.getFirst_name() + " " + entity.getLast_name());
+                userName.setText(entity.getUsername());
+                bio.setText(entity.getBio());
             }
         }, userDatabase).execute();
+
     }
 
     private void fillProfileCard(UserEntity user){
-
+//        TextView name = findViewById(R.id.name);
+//        TextView userName = findViewById(R.id.name);
+//        TextView bio = findViewById(R.id.name);
+//
+//        name.setText(user.getFirst_name() + " " + user.getLast_name());
+//        userName.setText(user.getUsername());
+//        bio.setText(user.getBio());
     }
 }
