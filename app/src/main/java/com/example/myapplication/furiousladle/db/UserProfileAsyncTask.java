@@ -19,5 +19,6 @@ public class UserProfileAsyncTask extends AsyncTask<UserEntity,UserEntity,UserEn
     @Override
     protected void onPostExecute(UserEntity userEntity) {
         super.onPostExecute(userEntity);
+        listener.onSuccessResult(userEntity);
     }
 }
