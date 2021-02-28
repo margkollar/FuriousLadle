@@ -60,8 +60,8 @@ public class RecyclerViewHolder extends RecyclerView.ViewHolder {
         Button viewMore = itemView.findViewById(R.id.holder_details);
         viewMore.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-//                old external browser code
 
+//                old external browser code
 //                Intent intent = new Intent();
 //                intent.setAction(Intent.ACTION_VIEW);
 //                intent.setData(Uri.parse(r.getExternalURL()));
@@ -76,16 +76,22 @@ public class RecyclerViewHolder extends RecyclerView.ViewHolder {
             }
         });
 
+        //share button
         Button shareBtn = itemView.findViewById(R.id.holder_share);
         shareBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
                 Intent intent = new Intent();
                 intent.setAction(Intent.ACTION_SEND);
-                intent.setType("text/plain");
-                intent.putExtra(Intent.EXTRA_TEXT, r.getExternalURL());
-                Intent shareIntent = Intent.createChooser(intent, null);
 
+                //type of share
+                intent.setType("text/plain");
+                //url
+                intent.putExtra(Intent.EXTRA_TEXT, r.getExternalURL());
+
+                //choose app to share
+                Intent shareIntent = Intent.createChooser(intent, null);
                 startActivity(v.getContext(), shareIntent, null);
 
             }

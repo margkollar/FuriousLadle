@@ -79,10 +79,6 @@ public class ProfileFragment extends BottomSheetDialogFragment {
         new UserProfileAsyncTask(new UserProfileCallback() {
             @Override
             public void onSuccessResult(UserEntity entity) {
-
-//                fillProfileCard(entity);
-
-
                 name.setText(entity.getFirst_name() + " " + entity.getLast_name());
                 userName.setText(entity.getUsername());
                 bio.setText(entity.getBio());
@@ -101,7 +97,6 @@ public class ProfileFragment extends BottomSheetDialogFragment {
     @Override
     public void setupDialog(Dialog dialog, int style) {
         super.setupDialog(dialog, style);
-
         //Set the custom view
         View view = LayoutInflater.from(getContext()).inflate(R.layout.fragment_profile, null);
         dialog.setContentView(view);

@@ -24,6 +24,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     @NonNull
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType){
+
         View view= LayoutInflater.from(parent.getContext()).inflate(R.layout.holder_card,parent,false);
 
         return new RecyclerViewHolder(view);
@@ -34,6 +35,7 @@ public class RecyclerAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolde
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder,int position){
         Recipe recipeModel=array.get(position);
 
+        //fill recycler view with model at the current position
         if (holder instanceof RecyclerViewHolder){
             RecyclerViewHolder recyclerViewHolder= (RecyclerViewHolder)holder ;
             recyclerViewHolder.bind(recipeModel);

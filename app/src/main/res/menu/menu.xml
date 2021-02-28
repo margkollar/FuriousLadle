@@ -2,9 +2,9 @@
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/profil"
+        android:id="@+id/profile"
         android:icon="@drawable/profile"
         android:title="Profil"
-        app:showAsAction="withText|always" />
+        app:showAsAction="always" />
 
 </menu>

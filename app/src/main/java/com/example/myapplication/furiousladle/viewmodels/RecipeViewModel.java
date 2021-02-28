@@ -55,10 +55,11 @@ public class RecipeViewModel extends AndroidViewModel {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
+//                        Get data from edamam api
                         List<Recipe> recipesModel = new ArrayList<>();
                         List<JsonResponseHit> jHits = new ArrayList<>();
                         List<JsonResponseRecipe> recipes = new ArrayList<>();
-
+//                      in case we have a response but it has no recipe data handle it as an "error"
                         JsonResponse jResp = new Gson().fromJson(response, JsonResponse.class);
                         if(jResp.getCount() <=0){
                             callback.onErrorResponse(EMPTY_STRING);

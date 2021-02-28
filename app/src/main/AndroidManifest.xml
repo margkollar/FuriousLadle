@@ -23,11 +23,6 @@
             android:launchMode="singleTop"
             android:parentActivityName=".Search" />
         <activity
-            android:name=".Profile"
-            android:label="Profile"
-            android:launchMode="singleTop"
-            android:parentActivityName=".recycler.RecyclerActivity" />
-        <activity
             android:name=".Search"
             android:theme="@style/NoActionBar" />
         <activity
@@ -38,7 +33,7 @@
             android:theme="@style/NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
+<!--                put Splash screen first activity-->
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

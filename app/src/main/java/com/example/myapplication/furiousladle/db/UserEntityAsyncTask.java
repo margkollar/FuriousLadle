@@ -4,7 +4,7 @@ import android.content.Context;
 import android.os.AsyncTask;
 
 import androidx.room.Room;
-
+//insert entities
 public class UserEntityAsyncTask extends AsyncTask<UserEntity,UserEntity,Boolean> {
     UserDatabase userDatabase;
 

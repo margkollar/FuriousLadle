@@ -13,6 +13,7 @@ public class WebBrowser extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_wbrowser);
+
         Bundle parameters = getIntent().getExtras();
         String urlStr = parameters.getString("theURL");
         WebView browser = (WebView) findViewById(R.id.webview);

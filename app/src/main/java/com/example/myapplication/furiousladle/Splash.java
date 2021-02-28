@@ -19,6 +19,8 @@ public class Splash extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
+
+        //read app preferences  (isInserted)
         preferences = this.getSharedPreferences("flprefs", MODE_PRIVATE);
         Boolean isInserted = preferences.getBoolean("isInserted", false);
 
@@ -30,9 +32,13 @@ public class Splash extends AppCompatActivity {
                     doInsert(new InsertCallbackListener() {
                         @Override
                         public void onSuccessResult() {
+
+                            //set isInserted true
                             SharedPreferences.Editor editor = preferences.edit();
                             editor.putBoolean("isInserted", true);
                             editor.apply();
+
+                            //send to Login
                             Intent intent = new Intent(Splash.this, LoginActivity.class);
                             startActivity(intent);
                             finish();
@@ -51,7 +57,7 @@ public class Splash extends AppCompatActivity {
         }, 3000);
 
     }
-
+    //insert user to the DataBase
     private void doInsert(InsertCallbackListener listener){
         //TODO id autoincrement thelei null ????
         UserEntity entity = new UserEntity("furious", "ladle", "furious",

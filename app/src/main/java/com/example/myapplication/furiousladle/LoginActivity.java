@@ -29,13 +29,16 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     public void onPostCreate(@Nullable Bundle savedInstanceState) {
         super.onPostCreate(savedInstanceState);
+
+        //onClick btnLogin
         Button btnLogin = findViewById(R.id.btn_login);
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                UserDatabase userDatabase= Room.databaseBuilder(getApplicationContext(),
+                UserDatabase userDatabase= Room.databaseBuilder(v.getContext(),
                         UserDatabase.class,"furious_ladle_db")
                         .build();
+                //check login credentials
                 new UserProfileAsyncTask(new UserProfileCallback() {
                     @Override
                     public void onSuccessResult(UserEntity entity) {
@@ -43,10 +46,12 @@ public class LoginActivity extends AppCompatActivity {
                         EditText passwdEdit = findViewById(R.id.password_input);
                         String userStr = userNameEdit.getText().toString();
                         String passwdStr = passwdEdit.getText().toString();
+
+                        //invalid username & password
                         if(!userStr.equalsIgnoreCase(entity.getUsername()) && !passwdStr.equalsIgnoreCase(entity.getPassword())){
                             Toast.makeText(LoginActivity.this, "Invalid username or password", Toast.LENGTH_SHORT).show();
-                        }else {
-                            // intent gia na paei sto search page
+                        } else {
+                            // send to search page
                             Intent intent = new Intent(LoginActivity.this, Search.class);
                             startActivity(intent);
                             finish();
@@ -56,5 +61,17 @@ public class LoginActivity extends AppCompatActivity {
 
             }
         });
+
+        //onClick btnCancel
+        Button btnCancel = findViewById(R.id.btn_cancel);
+        btnCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
+
+
     }
 }

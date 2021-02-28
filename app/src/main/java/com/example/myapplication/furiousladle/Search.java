@@ -37,41 +37,27 @@ public class Search extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_search);
+
         EditText userSrh = findViewById(R.id.search);
-
         userSrh.setOnEditorActionListener(editorListener);
-
-        userSrh.addTextChangedListener(new TextWatcher() {
-            @Override
-            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence s, int start, int before, int count) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable s) {
-//              edo pairno user input
-            }
-        });
     }
 
     private TextView.OnEditorActionListener editorListener = new TextView.OnEditorActionListener() {
 
         @Override
         public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
+
+            //read insert and search it
+
             switch (actionId) {
                 case EditorInfo.IME_ACTION_SEARCH:
-                    EditText userSrh = findViewById(R.id.search);
 
+                    EditText userSrh = findViewById(R.id.search);
                     String userStr = String.valueOf(userSrh.getText());
 
-//                    Toast.makeText(Search.this, "Searching", Toast.LENGTH_SHORT).show();
-
                     Intent intent = new Intent(Search.this, RecyclerActivity.class);
+
+                    //send parameter to next activity
                     Bundle parameter = new Bundle();
                     parameter.putString("searchterm", userStr);
                     intent.putExtras(parameter);
